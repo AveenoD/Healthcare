@@ -1,5 +1,10 @@
 const mysql = require('mysql2');
-require('dotenv').config();
+
+// Only load dotenv if not in a production environment (like Render)
+// Render injects variables directly, so dotenv is not needed there.
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 // Create the connection pool using the Public variables
 const pool = mysql.createPool({
@@ -21,6 +26,11 @@ pool.getConnection((err, connection) => {
   if (err) {
     console.error('❌ DB Connection Failed:', err.message);
     console.error('DEBUG INFO: Attempting to connect to ' + process.env.MYSQL_HOST + ':' + process.env.MYSQL_PORT);
+    // Log all environment variables related to MySQL for debugging
+    console.error('DEBUG: MYSQL_HOST:', process.env.MYSQL_HOST);
+    console.error('DEBUG: MYSQL_PORT:', process.env.MYSQL_PORT);
+    console.error('DEBUG: MYSQL_USER:', process.env.MYSQL_USER);
+    console.error('DEBUG: MYSQL_DATABASE:', process.env.MYSQL_DATABASE);
     return;
   }
   console.log('✅ MySQL Connected Successfully via Public Proxy');
