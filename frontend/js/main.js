@@ -1,5 +1,5 @@
 // ─── API BASE URL ─────────────────────────────
-const API = 'http://localhost:5000/api'
+const API = 'https://healthcare-8zlj.onrender.com/api'
 
 // ─── CURRENT PAGE ─────────────────────────────
 const page = window.location.pathname.split('/').pop()
