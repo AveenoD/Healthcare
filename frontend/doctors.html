@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctors | Community Healthcare</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="app-body">
+
+  <div class="app-layout">
+
+    <!-- ── SIDEBAR ───────────────────────── -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">➕</div>
+        <div class="logo-text">
+          <strong>Community Healthcare</strong>
+          <span>Support System</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <span class="nav-icon">🏠</span> Dashboard
+        </a>
+        <a href="appointments.html" class="nav-item">
+          <span class="nav-icon">📅</span> Book Appointment
+        </a>
+        <a href="doctors.html" class="nav-item active">
+          <span class="nav-icon">👨‍⚕️</span> Doctors
+        </a>
+        <a href="records.html" class="nav-item">
+          <span class="nav-icon">📋</span> Health Records
+        </a>
+        <a href="schemes.html" class="nav-item">
+          <span class="nav-icon">🏛️</span> Govt Schemes
+        </a>
+        <a href="doctors.html" class="nav-item">
+                    <span class="nav-icon">👨‍⚕️</span> Doctors
+                </a>
+        <a href="index.html" class="nav-item" id="logoutBtn">
+          <span class="nav-icon">🚪</span> Logout
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ── MAIN CONTENT ───────────────────── -->
+    <main class="main-content">
+
+      <!-- Top Bar -->
+      <div class="topbar">
+        <button class="hamburger" onclick="toggleSidebar()">☰</button>
+        <div class="topbar-user">
+          Welcome, <strong id="topbarName">User</strong>
+          <div class="avatar">👤</div>
+        </div>
+      </div>
+
+      <!-- Page Content -->
+      <div class="page-content">
+
+        <h1 class="page-title">Our Doctors</h1>
+        <p class="page-subtitle">Find the right doctor for your needs</p>
+
+        <!-- Search + Filter -->
+        <div class="doctors-toolbar">
+          <div class="schemes-search">
+            <input
+              type="text"
+              id="doctorSearch"
+              placeholder="🔍 Search by name or specialization..."
+              oninput="filterDoctors()"
+            />
+          </div>
+
+          <select id="specializationFilter" onchange="filterDoctors()">
+            <option value="">All Specializations</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="General Physician">General Physician</option>
+            <option value="Orthopedic">Orthopedic</option>
+            <option value="Gynecologist">Gynecologist</option>
+            <option value="Pediatrician">Pediatrician</option>
+          </select>
+        </div>
+
+        <!-- Doctors Grid -->
+        <div class="doctors-grid" id="doctorsGrid">
+          <p class="no-selection">Loading doctors...</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

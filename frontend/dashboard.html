@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Community Healthcare</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="app-body">
+
+    <div class="app-layout">
+
+        <!-- ── SIDEBAR ───────────────────────── -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">➕</div>
+                <div class="logo-text">
+                    <strong>Community Healthcare</strong>
+                    <span>Support System</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">🏠</span> Dashboard
+                </a>
+                <a href="appointments.html" class="nav-item">
+                    <span class="nav-icon">📅</span> Book Appointment
+                </a>
+                <a href="records.html" class="nav-item">
+                    <span class="nav-icon">📋</span> View Health Records
+                </a>
+                <a href="schemes.html" class="nav-item">
+                    <span class="nav-icon">🏛️</span> Govt Schemes
+                </a>
+                <a href="doctors.html" class="nav-item">
+                    <span class="nav-icon">👨‍⚕️</span> Doctors
+                </a>
+                <a href="index.html" class="nav-item" id="logoutBtn">
+                    <span class="nav-icon">🚪</span> Logout
+                </a>
+                
+            </nav>
+        </aside>
+
+        <!-- ── MAIN CONTENT ───────────────────── -->
+        <main class="main-content">
+
+            <!-- Top Bar -->
+            <div class="topbar">
+                <button class="hamburger" onclick="toggleSidebar()">☰</button>
+                <div class="topbar-user">
+                    Welcome, <strong id="topbarName">John Doe</strong>
+                    <div class="avatar">👤</div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="page-content">
+
+                <h1 class="page-title">Hi, <span id="userName">John Doe</span></h1>
+                <p class="page-subtitle">Welcome to Community Healthcare Support System</p>
+
+                <!-- Hero Section -->
+                <div class="hero-section">
+
+                    <!-- Banner -->
+                    <div class="hero-banner">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f3e5.svg" alt="Healthcare"
+                            class="hero-img" />
+                        <div class="hero-text">
+                            <h3>Your Health, Our Priority</h3>
+                            <p>Book appointments, track records & discover schemes</p>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Appointment -->
+                    <div class="upcoming-card">
+                        <h4>Upcoming Appointment</h4>
+                        <div class="appt-info">
+                            <div class="appt-icon">📅</div>
+                            <div>
+                                <strong id="apptDoctor">Dr. Sarah Smith</strong>
+                                <span id="apptSpecialization">Cardiologist</span>
+                            </div>
+                        </div>
+                        <p class="appt-date" id="apptDate">Monday, April 15, 2024 at 1:00 PM</p>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+
+                </div>
+
+                <!-- Quick Action Cards -->
+                <div class="quick-actions">
+
+                    <div class="action-card">
+                        <div class="action-icon">📅</div>
+                        <h4>Book Appointment</h4>
+                        <p>Schedule an appointment with a doctor</p>
+                        <button class="btn-primary" onclick="window.location.href='appointments.html'">
+                            Book Now
+                        </button>
+                    </div>
+
+                    <div class="action-card">
+                        <div class="action-icon">📋</div>
+                        <h4>Health Records</h4>
+                        <p>View your medical history and records</p>
+                        <button class="btn-primary" onclick="window.location.href='records.html'">
+                            View Records
+                        </button>
+                    </div>
+
+                    <div class="action-card">
+                        <div class="action-icon">🔍</div>
+                        <h4>Find Doctor</h4>
+                        <p>Search for a doctor in your area</p>
+                        <button class="btn-primary" onclick="window.location.href='doctors.html'">
+                            Search
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

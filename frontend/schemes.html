@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Govt Schemes | Community Healthcare</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="app-body">
+
+    <div class="app-layout">
+
+        <!-- ── SIDEBAR ───────────────────────── -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">➕</div>
+                <div class="logo-text">
+                    <strong>Community Healthcare</strong>
+                    <span>Support System</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">🏠</span> Dashboard
+                </a>
+                <a href="appointments.html" class="nav-item">
+                    <span class="nav-icon">📅</span> Book Appointment
+                </a>
+                <a href="records.html" class="nav-item">
+                    <span class="nav-icon">📋</span> View Health Records
+                </a>
+                <a href="schemes.html" class="nav-item active">
+                    <span class="nav-icon">🏛️</span> Govt Schemes
+                </a>
+                <a href="index.html" class="nav-item" id="logoutBtn">
+                    <span class="nav-icon">🚪</span> Logout
+                </a>
+                <a href="doctors.html" class="nav-item">
+                    <span class="nav-icon">👨‍⚕️</span> Doctors
+                </a>
+            </nav>
+        </aside>
+
+        <!-- ── MAIN CONTENT ───────────────────── -->
+        <main class="main-content">
+
+            <!-- Top Bar -->
+            <div class="topbar">
+                <button class="hamburger" onclick="toggleSidebar()">☰</button>
+                <div class="topbar-user">
+                    Welcome, <strong id="topbarName">User</strong>
+                    <div class="avatar">👤</div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="page-content">
+
+                <h1 class="page-title">Government Healthcare Schemes</h1>
+                <p class="page-subtitle">
+                    Explore schemes available for Nashik residents
+                </p>
+
+                <!-- Search Bar -->
+                <div class="schemes-search">
+                    <input type="text" id="schemeSearch" placeholder="🔍 Search schemes..." oninput="filterSchemes()" />
+                </div>
+
+                <!-- Schemes Grid -->
+                <div class="schemes-grid" id="schemesList">
+                    <!-- JS will render here -->
+                    <p class="no-selection">Loading schemes...</p>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Scheme Detail Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modalTitle">Scheme Name</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <span class="modal-label">📋 Description</span>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-section">
+                    <span class="modal-label">✅ Eligibility</span>
+                    <p id="modalEligibility"></p>
+                </div>
+                <div class="modal-section">
+                    <span class="modal-label">🎁 Benefits</span>
+                    <p id="modalBenefits"></p>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
